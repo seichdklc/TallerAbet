@@ -40,13 +40,25 @@ public class EmployeeTest {
     /**
      * Test of cs method, of class Employee.
      */
-    @Test
-    public void testCs() {
-        System.out.println("cs");
-        Employee instance = null;
-        assertEquals(0.0F, instance.cs(), 0.0);
+     @Test
+    public void testCsManager(){
+        Employee instance1 = new Employee(10.00F,"USD",5, EmployeeType.Manager);
+        assertEquals(77.83F, instance1.cs(), 0.5);        
     }
-
+    
+    @Test
+    public void testCsSupervisor(){
+        Employee instance2 = new Employee(10.00F,"USD",5, EmployeeType.Supervisor);
+        assertEquals(76.08F, instance2.cs(), 0.5);
+    }
+    
+    @Test
+    public void testCsWorker(){
+        Employee instance3 = new Employee(10.00F,"USD",5, EmployeeType.Worker);
+        assertEquals(74.33F, instance3.cs(), 0.5);
+        
+    }
+    
     /**
      * Test of CalculateYearBonus method, of class Employee.
      */
@@ -58,5 +70,4 @@ public class EmployeeTest {
         float result = instance.CalculateYearBonus();
         assertEquals(expResult, result, 0.0);
     }
-    
 }
