@@ -62,12 +62,29 @@ public class EmployeeTest {
     /**
      * Test of CalculateYearBonus method, of class Employee.
      */
-    @Test
-    public void testCalculateYearBonus() {
-        System.out.println("CalculateYearBonus");
-        Employee instance = null;
-        float expResult = 0.0F;
-        float result = instance.CalculateYearBonus();
-        assertEquals(expResult, result, 0.0);
+  
+    
+    @Test 
+    public void testCalculateYearBonusManager(){
+         Employee instance4 = new Employee(15.00F,"USD",5, EmployeeType.Manager);
+         float expResult=401.00F;
+         assertEquals(401.00F,instance4.CalculateYearBonus(),0.5);
     }
+    
+    @Test 
+    public void testCalculateYearBonusSupervisor(){
+         Employee instance5 = new Employee(12.00F,"USD",5, EmployeeType.Supervisor);
+         float expResult=205.00F;
+         assertEquals(205.00F,instance5.CalculateYearBonus(),0.5);
+    }
+    
+    @Test 
+    public void testCalculateYearBonusWorker(){
+         Employee instance6 = new Employee(10.00F,"USD",5, EmployeeType.Worker);
+         float expResult=386.00F;
+         assertEquals(386.00F,instance6.CalculateYearBonus(),0.5);
+    }
+    
+    
+    
 }
